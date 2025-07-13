@@ -1,0 +1,28 @@
+<%= form_with model: @user || User.new do |form| %>
+  <%= form.email_field(
+    :email_address,
+    required: true,
+    autofocus: true,
+    autocomplete: :username,
+    placeholder: "Enter your email address",
+    value: params[:email_address]
+  ) %>
+
+  <%= form.password_field(
+    :password,
+    required: true,
+    autocomplete: "nre-password",
+    placeholder: "Enter new password",
+    maxlength: 72
+  ) %>
+
+  <%= form.password_field(
+    :password_confirmation,
+    required: true,
+    autocomplete: "new-password",
+    placeholder: "Repeat new password",
+    maxlength: 72
+  ) %>
+
+  <%= form.submit "Sign up" %>
+<% end %>

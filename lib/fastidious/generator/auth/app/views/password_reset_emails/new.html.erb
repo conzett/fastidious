@@ -1,0 +1,15 @@
+<%= form_with(
+  scope: :password_reset_email,
+  url: password_reset_emails_path
+) do |form| %>
+  <%= form.email_field(
+    :email_address,
+    required: true,
+    autofocus: true,
+    autocomplete: :username,
+    placeholder: :email_address,
+    value: params[:email_address]
+  ) %>
+  
+  <%= form.submit "Email reset instructions" %>
+<% end %>
